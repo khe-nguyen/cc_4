@@ -27,5 +27,23 @@ for (let product of inventory) {
     }
 }
 
+// Testing if the code works on console
 console.log(inventory[0]);
+
+// Step 4: Apply extra discount based on customer type
+let customerType = "senior";
+
+let extraDiscount = 0;
+
+if (customerType === "student") {
+    extraDiscount = 0.05; // 5% off
+} else if (customerType === "senior") {
+    extraDiscount = 0.07; // 7% off
+} else {
+    extraDiscount = 0; // no discount
+}
+
+// Testing on console
+console.log("Customer type:", customerType);
+console.log("Extra discount:", (extraDiscount * 100).toFixed(0) + "%"); // Making sure no floats
 
