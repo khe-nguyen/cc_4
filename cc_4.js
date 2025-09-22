@@ -71,3 +71,11 @@ for (let i = 1; i <= 3; i++) {
     console.log("Customer #" + i + " total cost: $" + cartTotal.toFixed(2));
 }
 
+// Step 6: Log key/value pairs of one product
+let firstProduct = inventory[0];
+
+console.log("Details of first product after discounts:");
+for (let key in firstProduct) {
+    console.log(key + ": " + firstProduct[key]);
+}
+
