@@ -79,3 +79,12 @@ for (let key in firstProduct) {
     console.log(key + ": " + firstProduct[key]);
 }
 
+// Step 7: Use Object.entries() and destructuring
+console.log("Updated inventory after checkout:");
+
+for (let product of inventory) {
+    for (let [key, value] of Object.entries(product)) {
+        console.log(`${key}: ${value}`);
+    }
+    console.log("-----"); // separator between products
+}
