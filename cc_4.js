@@ -47,3 +47,27 @@ if (customerType === "student") {
 console.log("Customer type:", customerType);
 console.log("Extra discount:", (extraDiscount * 100).toFixed(0) + "%"); // Making sure no floats
 
+// Step 5: Simulate checkout for 3 customers
+for (let i = 1; i <= 3; i++) {
+    let cartTotal = 0;
+
+    // loop through products
+    for (let product of inventory) {
+        if (product.inventory > 0) {
+            // apply category discount (already in discountedPrice from Step 3)
+            let finalPrice = product.discountedPrice;
+
+            // apply extra discount (from Step 4)
+            finalPrice = finalPrice - (finalPrice * extraDiscount);
+
+            // add to cart total
+            cartTotal += finalPrice;
+
+            // reduce inventory by 1 (customer buys one of each available item)
+            product.inventory -= 1;
+        }
+    }
+
+    console.log("Customer #" + i + " total cost: $" + cartTotal.toFixed(2));
+}
+
